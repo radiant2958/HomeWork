@@ -1,7 +1,21 @@
 ﻿// задача 13
+
+int GetLengtArray(int number)
+{
+    int count = 0;
+    while(number>0)
+    {
+        number/= 10;
+        count++;
+    }
+    return count;
+}
+
+
 int ThirdDigit(int number)
 {
-    int[] array = new int[3];
+    int lengt = GetLengtArray(number);
+    int[] array = new int[lengt];
 
         for (int i = 0; i < array.Length; i++)
         {
@@ -9,12 +23,10 @@ int ThirdDigit(int number)
         array[i] = lastValue;
         number = number / 10;
         }
-      
-      array=Array.Reverse(array);
-      
-      
-      return array[2];
+      Array.Reverse(array);
+      return array[2] ;
     
 }
 
-Console.WriteLine(ThirdDigit(678));
+Console.WriteLine(ThirdDigit(35));
+
